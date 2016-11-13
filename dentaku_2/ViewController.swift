@@ -8,6 +8,14 @@
 
 import UIKit
 
+
+//enum operatorKey: String {
+//    case plus = "+"
+//    case mainas = "-"
+//    case times = "*"
+//    case devide = "/"
+//  
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var display: UILabel!
@@ -43,18 +51,43 @@ class ViewController: UIViewController {
     @IBAction func equal(_ sender: UIButton) {
         
         
-        if currentOperator == "+" {
+//        if currentOperator == "+" {
+//            previousValue += Double(display.text!)!
+//        } else if currentOperator == "-"{
+//            
+//            previousValue -= Double(display.text!)!
+//        } else if currentOperator == "×"{
+//            
+//            previousValue *= Double(display.text!)!
+//        } else if currentOperator == "÷"{
+//            
+//            previousValue /= Double(display.text!)!
+//        }
+//        
+        
+        
+        switch currentOperator! {
+            
+        case "+":
             previousValue += Double(display.text!)!
-        } else if currentOperator == "-"{
+            break
             
+        case "-":
             previousValue -= Double(display.text!)!
-        } else if currentOperator == "×"{
+            break
             
+        case "*":
             previousValue *= Double(display.text!)!
-        } else if currentOperator == "÷"{
+            break
             
+        case "/":
             previousValue /= Double(display.text!)!
+            break
+            
+        default:
+            break
         }
+        
         
         display.text = String(previousValue)
         previousValue = 0.0
